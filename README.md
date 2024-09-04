@@ -19,7 +19,7 @@ Este é um projeto de aplicação web de perguntas e respostas, desenvolvido com
 
    Comece clonando este repositório para o seu ambiente local:
 
-   `git clone https://github.com/seu-usuario/seu-repositorio.git`
+   `git clone https://github.com/buenoDev7/Ask.Me.git`
 
 2. **Instalar Dependências**
     `cd seu-repositorio`
@@ -42,7 +42,7 @@ Este é um projeto de aplicação web de perguntas e respostas, desenvolvido com
 
 **O servidor estará disponível em `http://localhost:3000.`**
 
-# Funcionalidades
+## Funcionalidades
 - Criação e Exibição de Perguntas: Os usuários podem criar novas perguntas e visualizar uma lista de perguntas existentes.
 
 - Respostas às Perguntas: Usuários podem responder às perguntas e visualizar as respostas.
