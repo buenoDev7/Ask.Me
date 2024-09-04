@@ -1,0 +1,104 @@
+@keyframes updown {
+    0% {
+        transform: translateX(-20px);
+    } 50% {
+        transform: translateX(30px);
+    } 100% {
+        transform: translateX(-20px);
+    }
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    background-color: #083449;
+}
+
+#navbar {
+    border-bottom: 2px solid #e3e3e3;
+}
+
+#logo-nav {
+    font-family: 'Excon', sans-serif;
+    color: #e3e3e3;
+    font-weight: 200;
+    transition: all 500ms ease;
+}
+
+#logo-nav:hover{
+    transform: translateX(20px);
+    filter: drop-shadow(3px 3px 10px #e3e3e3);
+}
+
+a {
+    color: #e3e3e3;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #e3e3e3;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    padding-top: 3vh;
+}
+
+#err {
+    font-size: 140px;
+    color: #007bff;
+    font-weight: 600;
+    letter-spacing: 12px;
+    transition: all 350ms ease-in-out;
+}
+
+#err:hover {
+    color: #b5eaff;
+    filter: drop-shadow(1px 1px 20px #b5eaff);
+}
+
+#not-found {
+    font-size: 3em;
+    color: #007bff;
+    font-weight: 300;
+    letter-spacing: 3px;
+    transition: all 350ms ease-in-out;
+}
+
+#not-found:hover {
+    color: #b5eaff;
+    filter: drop-shadow(1px 1px 20px #b5eaff);
+}
+
+#img-err {
+    width: 12em;
+    position: absolute;
+    bottom: 1.2em;
+    right: 5vw;
+    animation: updown 7s infinite forwards;
+    z-index: -1;
+}
+
+#voltar {
+    background-color: rgba(11, 11, 11, 0.3);
+    color: white;
+    font-weight: 100;
+    letter-spacing: 1px;
+    border: 1px solid #e3e3e3;
+}
+
+#voltar:hover {
+    filter: drop-shadow(2px 2px 28px #2e63a3);
+    border: 1px solid #007bff;
+}

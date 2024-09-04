@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pergunta: "<%= pergunta.titulo %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/pergunta.css" />
+    <link rel="shortcut icon" href="/img/icons8-ask-96.png" type="image/x-icon">
+    <!-- fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=excon@100,400,500,700,900&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <navbar class="navbar pt-4 pb-4 pl-4" id="navbar">
+        <h4 id="logo-nav">
+        <a href="/">&lt;bueno_dev&gt;</a>
+        </h4>
+        <a href="/perguntar" class="btn btn-success">Fazer outra pergunta</a>
+    </navbar>
+    <br><br>
+
+    <div class="container mt-5">
+        <div class="card" id="card">
+            <div class="card-header">
+                <h5 id="username" class="pt-3">
+                    <img width="23" height="23" class="mb-1" src="https://img.icons8.com/color/100/filled-topic.png" alt="filled-topic"/>&NonBreakingSpace;
+                    <%= pergunta.username %> <span class="text-dark">disse:</span></h5>
+                <br>
+                <h4 id="titulo">"<%= pergunta.titulo %>"</h4>
+            </div>
+            <div class="card-body" id="card-body">
+                <h5 id="descricao" class="pt-4">
+                    "<%= pergunta.descricao %>"
+                </h5>
+                <br>
+                <span id="data">Publicado em: <%= pergunta.createdAtFormatted %></span>
+            </div>
+            
+            <div class="card-footer py-4">
+                <h3>Responder Pergunta</h3>
+                <br>
+                <form action="/responder" method="post">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" id="input-username">
+                    <br>
+                    <label>Descreva sua resposta</label>
+                    <textarea name="corpoResposta" id="textarea-resposta" class="form-control"></textarea>
+                    <br>
+                    <input type="hidden" name="idPergunta" value="<%= pergunta.id %>">
+                    <button type="submit" class="btn btn-success">Responder</button>
+                </form>
+            </div>
+        </div>
+        <br><br><br>
+        <h2 class="text-center" id="respostas">
+        Respostas
+        <hr style="border: 1px solid#e3e3e3;">
+        </h2>
+    </div>
+
+    <% respostas.forEach(resposta => { %>
+        <br><br><br>
+        <div class="container" id="container">
+            <div class="card">
+                <div class="card-header">
+                    <h5 id="username" class="pt-3">
+                        <img width="23" height="23" class="mb-1" src="https://img.icons8.com/color/100/filled-topic.png" alt="filled-topic"/>&NonBreakingSpace;
+                        <%= resposta.username %> <span class="text-dark">respondeu:</span></h5>
+                </div>
+                <div class="card-body">
+                    <pre id="corpoResposta" class="px-2">"<%= resposta.corpoResposta %>"</pre>
+                </div>
+                <div class="card-footer">
+                    <span id="data">
+                        Respondido em: <%= resposta.createdAtFormatted %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    <br><br>
+    <div class="text-center">
+        <a href="#top" class="btn btn-secondary">Voltar ao topo</a>
+    </div>
+    <br><br>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
