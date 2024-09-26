@@ -107,5 +107,5 @@ app.post('/responder', (req, res) => {
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=> {
-    console.log("\n✅ Servidor conectado com sucesso!")
+    console.log(`\n✅ Servidor conectado com sucesso!\n\n🚀 Rodando na porta: ${PORT}\n`)
 })
